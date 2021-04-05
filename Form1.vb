@@ -16,6 +16,7 @@
         tbl_tableau.RowCount = 8
         tbl_tableau.ColumnCount = 8
         tbl_tableau.BackgroundImage = jeudechec.My.Resources.echecdamier
+        tbl_tableau.BackgroundImageLayout = ImageLayout.Stretch
         tbl_tableau.Top = 70
         tbl_tableau.Left = 510
     End Sub
