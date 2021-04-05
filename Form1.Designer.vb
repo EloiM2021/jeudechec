@@ -22,17 +22,33 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.tbl_tableau = New System.Windows.Forms.TableLayoutPanel()
         Me.SuspendLayout()
+        '
+        'tbl_tableau
+        '
+        Me.tbl_tableau.ColumnCount = 2
+        Me.tbl_tableau.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tbl_tableau.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tbl_tableau.Location = New System.Drawing.Point(230, 122)
+        Me.tbl_tableau.Name = "tbl_tableau"
+        Me.tbl_tableau.RowCount = 2
+        Me.tbl_tableau.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tbl_tableau.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tbl_tableau.Size = New System.Drawing.Size(200, 100)
+        Me.tbl_tableau.TabIndex = 0
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.tbl_tableau)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents tbl_tableau As TableLayoutPanel
 End Class
