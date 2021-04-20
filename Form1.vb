@@ -7,16 +7,17 @@
 
 
 
+
     Dim pb As New PictureBox
-    Dim board(,) As Integer =
-        {{3, 2, 4, 5, 6, 4, 2, 3},
-        {1, 1, 1, 1, 1, 1, 1, 1},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {1, 1, 1, 1, 1, 1, 1, 1},
-        {3, 2, 4, 5, 6, 4, 2, 3}}
+    Dim board(,) As String =
+        {{"bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"},
+        {"bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"},
+        {"__", "__", "__", "__", "__", "__", "__", "__"},
+        {"__", "__", "__", "__", "__", "__", "__", "__"},
+        {"__", "_", "__", "__", "__", "__", "__", "__"},
+        {"__", "__", "_", "__", "__", "__", "__", "__"},
+        {"wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"},
+        {"wR", "wN", "wB", "wQ", "wK", "wB", "wK", "wR"}}
 
     'rien : 0
     'pion : 1
@@ -27,32 +28,28 @@
     'roi : 6
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label2.Text = "bonjour"
+        pb.BackgroundImage = jeudechec.My.Resources.wp
         Me.Height = 1080
         Me.Width = 1920
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
-        'jeudechec.My.Resources.wp
+        tbl_tableau.Width = 900
+        tbl_tableau.Height = 900
+        tbl_tableau.RowCount = 8
+        tbl_tableau.ColumnCount = 8
+        tbl_tableau.BackgroundImageLayout = ImageLayout.Stretch
+        tbl_tableau.Top = 70
+        tbl_tableau.Left = 510
+        tbl_tableau.Controls.Add(Label2, 2, 2)
+        tbl_tableau.ForeColor = Color.Blue
 
-    End Sub
 
-    Private Function test_positions()
-        Select Case whatobject
-            Case 1
-                If whatobject = pionblanc1 Then
+        Case 5
 
-                End If
-
-            Case 2
-
-            Case 3
-
-            Case 4
-
-            Case 5
-
-            Case 6
+        Case 6
 
         End Select
-    End Function
+        End Function
 
 End Class
 Public Class pion
@@ -131,28 +128,5 @@ Public Class dame
     Public deplacement As Integer()
     Public couleur As String
 
-    Public Sub New(col As String)
-        couleur = col
-    End Sub
-    Public Sub SetCouleur(col As String)
-        couleur = col
-    End Sub
-    Public Function Getcouleur() As String
-        Return couleur
-    End Function
 End Class
-
-Public Class roi
-    Public deplacement As Integer()
-    Public couleur As String
-
-    Public Sub New(col As String)
-        couleur = col
-    End Sub
-    Public Sub SetCouleur(col As String)
-        couleur = col
-    End Sub
-    Public Function Getcouleur() As String
-        Return couleur
-    End Function
 End Class
