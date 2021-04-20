@@ -22,50 +22,80 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.tbl_tableau = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btn_valider = New System.Windows.Forms.Button()
+        Me.lbl_attaque = New System.Windows.Forms.Label()
+        Me.edt_attaquantX = New System.Windows.Forms.TextBox()
+        Me.edt_cibleX = New System.Windows.Forms.TextBox()
+        Me.edt_attaquantY = New System.Windows.Forms.TextBox()
+        Me.edt_cibleY = New System.Windows.Forms.TextBox()
+        Me.edt_tableau = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'tbl_tableau
+        'btn_valider
         '
-        Me.tbl_tableau.ColumnCount = 2
-        Me.tbl_tableau.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tbl_tableau.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tbl_tableau.Location = New System.Drawing.Point(230, 122)
-        Me.tbl_tableau.Name = "tbl_tableau"
-        Me.tbl_tableau.RowCount = 2
-        Me.tbl_tableau.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tbl_tableau.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tbl_tableau.Size = New System.Drawing.Size(200, 100)
-        Me.tbl_tableau.TabIndex = 0
+        Me.btn_valider.Location = New System.Drawing.Point(57, 113)
+        Me.btn_valider.Name = "btn_valider"
+        Me.btn_valider.Size = New System.Drawing.Size(87, 42)
+        Me.btn_valider.TabIndex = 0
+        Me.btn_valider.Text = "Button1"
+        Me.btn_valider.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lbl_attaque
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(733, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 15)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Label1"
+        Me.lbl_attaque.AutoSize = True
+        Me.lbl_attaque.Location = New System.Drawing.Point(251, 127)
+        Me.lbl_attaque.Name = "lbl_attaque"
+        Me.lbl_attaque.Size = New System.Drawing.Size(41, 15)
+        Me.lbl_attaque.TabIndex = 1
+        Me.lbl_attaque.Text = "Label1"
         '
-        'Label2
+        'edt_attaquantX
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(634, 149)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 15)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Label2"
+        Me.edt_attaquantX.Location = New System.Drawing.Point(221, 90)
+        Me.edt_attaquantX.Name = "edt_attaquantX"
+        Me.edt_attaquantX.Size = New System.Drawing.Size(100, 23)
+        Me.edt_attaquantX.TabIndex = 2
+        '
+        'edt_cibleX
+        '
+        Me.edt_cibleX.Location = New System.Drawing.Point(221, 155)
+        Me.edt_cibleX.Name = "edt_cibleX"
+        Me.edt_cibleX.Size = New System.Drawing.Size(100, 23)
+        Me.edt_cibleX.TabIndex = 3
+        '
+        'edt_attaquantY
+        '
+        Me.edt_attaquantY.Location = New System.Drawing.Point(374, 92)
+        Me.edt_attaquantY.Name = "edt_attaquantY"
+        Me.edt_attaquantY.Size = New System.Drawing.Size(100, 23)
+        Me.edt_attaquantY.TabIndex = 4
+        '
+        'edt_cibleY
+        '
+        Me.edt_cibleY.Location = New System.Drawing.Point(374, 155)
+        Me.edt_cibleY.Name = "edt_cibleY"
+        Me.edt_cibleY.Size = New System.Drawing.Size(100, 23)
+        Me.edt_cibleY.TabIndex = 5
+        '
+        'edt_tableau
+        '
+        Me.edt_tableau.Location = New System.Drawing.Point(196, 275)
+        Me.edt_tableau.Name = "edt_tableau"
+        Me.edt_tableau.Size = New System.Drawing.Size(313, 23)
+        Me.edt_tableau.TabIndex = 7
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.tbl_tableau)
+        Me.Controls.Add(Me.edt_tableau)
+        Me.Controls.Add(Me.edt_cibleY)
+        Me.Controls.Add(Me.edt_attaquantY)
+        Me.Controls.Add(Me.edt_cibleX)
+        Me.Controls.Add(Me.edt_attaquantX)
+        Me.Controls.Add(Me.lbl_attaque)
+        Me.Controls.Add(Me.btn_valider)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -73,7 +103,11 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents tbl_tableau As TableLayoutPanel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents btn_valider As Button
+    Friend WithEvents lbl_attaque As Label
+    Friend WithEvents edt_attaquantX As TextBox
+    Friend WithEvents edt_cibleX As TextBox
+    Friend WithEvents edt_attaquantY As TextBox
+    Friend WithEvents edt_cibleY As TextBox
+    Friend WithEvents edt_tableau As TextBox
 End Class
