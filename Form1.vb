@@ -1,5 +1,4 @@
 ﻿Public Class Form1
-
     Dim pionblanc1 As pion = New pion({0, 1}, "blanc")
     Dim pionblanc2 As pion = New pion({1, 1}, "blanc")
     Dim pionblanc3 As pion = New pion({2, 1}, "blanc")
@@ -17,7 +16,6 @@
     Dim pionnoir6 As pion = New pion({5, 6}, "noir")
     Dim pionnoir7 As pion = New pion({6, 6}, "noir")
     Dim pionnoir8 As pion = New pion({7, 6}, "noir")
-
 
 
 
