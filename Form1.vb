@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-    Dim pionblanc As pion = New pion()
+    Dim pionblanc As pion = New pion({3, 2}, "blanc")
     Dim pb As New PictureBox
     Dim board(,) As Integer =
         {{3, 2, 4, 5, 6, 4, 2, 3},
@@ -34,6 +34,7 @@
         tbl_tableau.Left = 510
         tbl_tableau.Controls.Add(Label2, 2, 2)
         tbl_tableau.ForeColor = Color.Blue
+
 
     End Sub
 
