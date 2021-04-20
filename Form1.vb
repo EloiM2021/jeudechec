@@ -17,6 +17,8 @@
     Dim pionnoir7 As pion = New pion({6, 6}, "noir")
     Dim pionnoir8 As pion = New pion({7, 6}, "noir")
 
+    'test guthub
+
 
 
     Dim pb As New PictureBox
