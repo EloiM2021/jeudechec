@@ -1,5 +1,24 @@
 ﻿Public Class Form1
-    Dim pionblanc As pion = New pion()
+    Dim pionblanc1 As pion = New pion({0, 1}, "blanc")
+    Dim pionblanc2 As pion = New pion({1, 1}, "blanc")
+    Dim pionblanc3 As pion = New pion({2, 1}, "blanc")
+    Dim pionblanc4 As pion = New pion({3, 1}, "blanc")
+    Dim pionblanc5 As pion = New pion({4, 1}, "blanc")
+    Dim pionblanc6 As pion = New pion({5, 1}, "blanc")
+    Dim pionblanc7 As pion = New pion({6, 1}, "blanc")
+    Dim pionblanc8 As pion = New pion({7, 1}, "blanc")
+
+    Dim pionnoir1 As pion = New pion({0, 6}, "noir")
+    Dim pionnoir2 As pion = New pion({1, 6}, "noir")
+    Dim pionnoir3 As pion = New pion({2, 6}, "noir")
+    Dim pionnoir4 As pion = New pion({3, 6}, "noir")
+    Dim pionnoir5 As pion = New pion({4, 6}, "noir")
+    Dim pionnoir6 As pion = New pion({5, 6}, "noir")
+    Dim pionnoir7 As pion = New pion({6, 6}, "noir")
+    Dim pionnoir8 As pion = New pion({7, 6}, "noir")
+
+
+
     Dim pb As New PictureBox
     Dim board(,) As Integer =
         {{3, 2, 4, 5, 6, 4, 2, 3},
@@ -34,6 +53,7 @@
         tbl_tableau.Left = 510
         tbl_tableau.Controls.Add(Label2, 2, 2)
         tbl_tableau.ForeColor = Color.Blue
+
 
     End Sub
 
