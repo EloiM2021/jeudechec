@@ -1,15 +1,24 @@
 ﻿Public Class Form1
     Dim pionblanc As pion = New pion()
     Dim pb As New PictureBox
-    Dim board(,) As String =
-        {{"bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"},
-        {"bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"},
-        {"__", "__", "__", "__", "__", "__", "__", "__"},
-        {"__", "__", "__", "__", "__", "__", "__", "__"},
-        {"__", "__", "__", "__", "__", "__", "__", "__"},
-        {"__", "__", "__", "__", "__", "__", "__", "__"},
-        {"wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"},
-        {"wR", "wN", "wB", "wQ", "wK", "wB", "wK", "wR"}}
+    Dim board(,) As Integer =
+        {{3, 2, 4, 5, 6, 4, 2, 3},
+        {1, 1, 1, 1, 1, 1, 1, 1},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {1, 1, 1, 1, 1, 1, 1, 1},
+        {3, 2, 4, 5, 6, 4, 2, 3}}
+
+    'rien : 0
+    'pion : 1
+    'cavalier : 2
+    'tour : 3
+    'fou: 4
+    'dame : 5
+    'roi : 6
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label2.Text = "bonjour"
         pb.BackgroundImage = jeudechec.My.Resources.wp
@@ -25,6 +34,7 @@
         tbl_tableau.Left = 510
         tbl_tableau.Controls.Add(Label2, 2, 2)
         tbl_tableau.ForeColor = Color.Blue
+
     End Sub
 
 
