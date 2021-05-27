@@ -28,7 +28,7 @@ Partial Class Form1
         Me.edt_cibleX = New System.Windows.Forms.TextBox()
         Me.edt_attaquantY = New System.Windows.Forms.TextBox()
         Me.edt_cibleY = New System.Windows.Forms.TextBox()
-        Me.edt_tableau = New System.Windows.Forms.TextBox()
+        Me.lbl_tableau = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_valider
@@ -77,19 +77,21 @@ Partial Class Form1
         Me.edt_cibleY.Size = New System.Drawing.Size(100, 23)
         Me.edt_cibleY.TabIndex = 5
         '
-        'edt_tableau
+        'lbl_tableau
         '
-        Me.edt_tableau.Location = New System.Drawing.Point(196, 275)
-        Me.edt_tableau.Name = "edt_tableau"
-        Me.edt_tableau.Size = New System.Drawing.Size(313, 23)
-        Me.edt_tableau.TabIndex = 7
+        Me.lbl_tableau.AutoSize = True
+        Me.lbl_tableau.Location = New System.Drawing.Point(319, 237)
+        Me.lbl_tableau.Name = "lbl_tableau"
+        Me.lbl_tableau.Size = New System.Drawing.Size(41, 15)
+        Me.lbl_tableau.TabIndex = 6
+        Me.lbl_tableau.Text = "Label1"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.edt_tableau)
+        Me.Controls.Add(Me.lbl_tableau)
         Me.Controls.Add(Me.edt_cibleY)
         Me.Controls.Add(Me.edt_attaquantY)
         Me.Controls.Add(Me.edt_cibleX)
@@ -109,5 +111,5 @@ Partial Class Form1
     Friend WithEvents edt_cibleX As TextBox
     Friend WithEvents edt_attaquantY As TextBox
     Friend WithEvents edt_cibleY As TextBox
-    Friend WithEvents edt_tableau As TextBox
+    Friend WithEvents lbl_tableau As Label
 End Class
