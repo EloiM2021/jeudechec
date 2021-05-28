@@ -8,6 +8,12 @@
     Dim bp, wp, bR, bN, bB, bQ, bK, wR, wN, wB, wQ, wK As String
 
     Dim pb As New PictureBox
+    Dim PieceSelect As String
+    Dim cibleX As Integer
+    Dim cibleY As Integer
+    Dim cibleCase As String
+    Dim posX As Integer
+    Dim posY As String
     Dim board(,) As String =
         {{"bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"},
         {"bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"},
