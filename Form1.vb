@@ -27,49 +27,51 @@
         Me.Height = 1080
         Me.Width = 1920
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
-        'jeudechec.My.Resources.wp
         lbl_attaque.Text = "Attaque en:"
     End Sub
 
     Private Function test_positions()
         Select Case whatobject
-            Case 1
-                If whatobject = bp Or wp Then
-                    If cibleX = posX + 1 Or posX - 1 And cibleY = posY + 1 Or posY - 1 Then
+            Case bp
+                If cibleX = posX - 1 Then
 
-                    Else
-                        MsgBox("position demandée impossible")
-                    End If
+                Else
+                    MsgBox("position demandée impossible")
                 End If
 
-            Case 2
-                If whatobject = bN Or wN Then
-                    If cibleX = posX + 1 Or posX - 1 And cibleY = posY + 3 Or posY - 3 OrElse cibleX = posX + 3 Or posX - 3 And cibleY = posY + 1 Or posY - 1 Then
+            Case bN Or wN
+                If cibleX = posX + 1 Or posX - 1 And cibleY = posY + 3 Or posY - 3 OrElse cibleX = posX + 3 Or posX - 3 And cibleY = posY + 1 Or posY - 1 Then
 
-                    Else
-                        MsgBox("position demandée impossible")
-                    End If
+                Else
+                    MsgBox("position demandée impossible")
                 End If
-            Case 3
-                If whatobject = bR Or wR Then
-                    If cibleX = posX + 10 Or posX - 10 And cibleY = posY OrElse cibleX = posX And cibleY = posY + 10 Or posY - 10 Then
+            Case bR Or wR
+                If cibleX = posX + 10 Or posX - 10 And cibleY = posY OrElse cibleX = posX And cibleY = posY + 10 Or posY - 10 Then
 
-                    Else
-                        MsgBox("position demandée impossible")
-                    End If
+                Else
+                    MsgBox("position demandée impossible")
                 End If
-            Case 4
-                If whatobject = wB Or bB Then
-                    If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
+            Case wB Or bB
+                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
 
-                    Else
-                        MsgBox("position demandée impossible")
-                    End If
+                Else
+                    MsgBox("position demandée impossible")
                 End If
-            Case 5
+            Case wp
+                If cibleX = posX + 1 Then
 
-            Case 6
+                Else
+                    MsgBox("position demandée impossible")
+                End If
+            Case bQ Or wQ
+                If cibleX Then
 
+                End If
+
+            Case bK Or wK
+                If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or 
+
+                End If
         End Select
     End Function
 
@@ -95,7 +97,6 @@
                     lbl_tableau.Text = lbl_tableau.Text + vbCr + board(i, j)
                 Else
                     lbl_tableau.Text = lbl_tableau.Text + board(i, j)
-                    'ajouter espace 
                 End If
             Next
         Next
