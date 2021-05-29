@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-    Dim whatobject As Object
+    Dim whatobject As String
     Dim actualposition As Integer
     Dim posX As Integer
     Dim posY As Integer
@@ -17,17 +17,14 @@
     Dim board(,) As String =
         {{"bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"},
         {"bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"},
-        {"__", "__", "__", "__", "__", "__", "__", "__"},
-        {"__", "__", "__", "__", "__", "__", "__", "__"},
-        {"__", "__", "__", "__", "__", "__", "__", "__"},
-        {"__", "__", "__", "__", "__", "__", "__", "__"},
+        {"___", "___", "___", "___", "___", "___", "___", "___"},
+        {"___", "___", "___", "___", "___", "___", "___", "___"},
+        {"___", "___", "___", "___", "___", "___", "___", "___"},
+        {"___", "___", "___", "___", "___", "___", "___", "___"},
         {"wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"},
         {"wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR"}}
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Height = 1080
-        Me.Width = 1920
-        Me.FormBorderStyle = FormBorderStyle.FixedSingle
         lbl_attaque.Text = "Attaque en:"
     End Sub
 
@@ -86,28 +83,47 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_valider.Click
         lbl_tableau.ResetText()
+
         posX = edt_attaquantX.Text
         posY = edt_attaquantY.Text
-        PieceSelect = board(posX, posY)
-
         cibleX = edt_cibleX.Text
         cibleY = edt_cibleY.Text
+
+
+        PieceSelect = board(posX, posY)
         cibleCase = board(cibleX, cibleY)
+
+        'verification de coup non fraticide
+        If PieceSelect = "bR" Or PieceSelect = "bN" Or PieceSelect = "bB" Or PieceSelect = "bQ" Or PieceSelect = "bK" Or PieceSelect = "bp" Then
+            If cibleCase = "wR" Or cibleCase = "wN" Or cibleCase = "wB" Or cibleCase = "wQ" Or cibleCase = "wK" Or cibleCase = "___" Or cibleCase = "wp" Then
+            Else
+                MessageBox.Show("Coup invalide car fraticide")
+                Exit Sub
+            End If
+        ElseIf PieceSelect = "wR" Or PieceSelect = "wN" Or PieceSelect = "wB" Or PieceSelect = "wQ" Or PieceSelect = "wK" Or PieceSelect = "wp" Then
+
+            If cibleCase = "bR" Or cibleCase = "bN" Or cibleCase = "bB" Or cibleCase = "bQ" Or cibleCase = "bK" Or cibleCase = "bp" Or cibleCase = "___" Then
+            Else
+                MessageBox.Show("Coup invalide car fraticide")
+                Exit Sub
+            End If
+        End If
         Affichage()
     End Sub
     Private Function Affichage()
-        board(posX, posY) = "__"
+        board(posX, posY) = "___"
         board(cibleX, cibleY) = PieceSelect
         For i = 0 To 7
 
             For j = 0 To 7
                 If j = 0 Then
-                    lbl_tableau.Text = lbl_tableau.Text + vbCr + board(i, j)
+                    lbl_tableau.Text = lbl_tableau.Text + vbCr + board(i, j) + "  "
                 Else
-                    lbl_tableau.Text = lbl_tableau.Text + board(i, j)
+                    lbl_tableau.Text = lbl_tableau.Text + board(i, j) + "  "
                 End If
             Next
         Next
+        MessageBox.Show(PieceSelect)
         Return 0
     End Function
 
