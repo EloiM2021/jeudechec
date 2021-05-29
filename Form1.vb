@@ -6,6 +6,8 @@
     Dim posX_toreach As Integer
     Dim posY_toreach As Integer
     Dim bp, wp, bR, bN, bB, bQ, bK, wR, wN, wB, wQ, wK As String
+    Dim max_cibleX As Integer
+    Dim max_cibleY As Integer
 
     Dim pb As New PictureBox
     Dim PieceSelect As String
@@ -15,7 +17,6 @@
     Dim board(,) As String =
         {{"bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"},
         {"bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"},
-        {"__", "__", "__", "__", "__", "__", "__", "__"},
         {"__", "__", "__", "__", "__", "__", "__", "__"},
         {"__", "__", "__", "__", "__", "__", "__", "__"},
         {"__", "__", "__", "__", "__", "__", "__", "__"},
@@ -41,19 +42,22 @@
 
             Case bN Or wN
                 If cibleX = posX + 1 Or posX - 1 And cibleY = posY + 3 Or posY - 3 OrElse cibleX = posX + 3 Or posX - 3 And cibleY = posY + 1 Or posY - 1 Then
-
+                    posX = cibleX
+                    posY = cibleY
                 Else
                     MsgBox("position demandée impossible")
                 End If
             Case bR Or wR
                 If cibleX = posX + 10 Or posX - 10 And cibleY = posY OrElse cibleX = posX And cibleY = posY + 10 Or posY - 10 Then
-
+                    posX = cibleX
+                    posY = cibleY
                 Else
                     MsgBox("position demandée impossible")
                 End If
             Case wB Or bB
                 If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
-
+                    posX = cibleX
+                    posY = cibleY
                 Else
                     MsgBox("position demandée impossible")
                 End If
@@ -69,9 +73,13 @@
                 End If
 
             Case bK Or wK
-                If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or 
-
+                If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY - 1 Then
+                    posX = cibleX
+                    posY = cibleY
+                Else
+                    MsgBox("position demandée impossible")
                 End If
+
         End Select
     End Function
 
@@ -102,5 +110,51 @@
         Next
         Return 0
     End Function
+
+    Private Function tour()
+        If posX = 0 Then
+            max_cibleX = 7
+        ElseIf posX = 7 Then
+            max_cibleX = 0
+        End If
+
+        If cibleX > max_cibleX Or cibleX < 0 Then
+            MsgBox("ce déplacement est impossible")
+        End If
+
+        If posY = 0 Then
+            max_cibleY = 7
+        ElseIf posY = 7 Then
+            max_cibleY = 0
+        End If
+
+        If cibleY > max_cibleY Or cibleY < 0 Then
+            MsgBox("ce déplacement est impossible")
+        End If
+    End Function
+
+    Private Function reine()
+        If posX = 0 Then
+            max_cibleX = 7
+        ElseIf posX = 7 Then
+            max_cibleX = 0
+        End If
+
+        If cibleX > max_cibleX Or cibleX < 0 Then
+            MsgBox("ce déplacement est impossible")
+        End If
+
+        If posY = 0 Then
+            max_cibleY = 7
+        ElseIf posY = 7 Then
+            max_cibleY = 0
+        End If
+
+        If cibleY > max_cibleY Or cibleY < 0 Then
+            MsgBox("ce déplacement est impossible")
+        End If
+    End Function
+
+    Private Function 
 End Class
 
