@@ -31,6 +31,7 @@ Partial Class Form1
         Me.lbl_tableau = New System.Windows.Forms.Label()
         Me.lbl_x = New System.Windows.Forms.Label()
         Me.lbl_y = New System.Windows.Forms.Label()
+        Me.btn_affichage = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_valider
@@ -63,14 +64,14 @@ Partial Class Form1
         Me.edt_cibleX.Location = New System.Drawing.Point(221, 155)
         Me.edt_cibleX.Name = "edt_cibleX"
         Me.edt_cibleX.Size = New System.Drawing.Size(100, 23)
-        Me.edt_cibleX.TabIndex = 3
+        Me.edt_cibleX.TabIndex = 4
         '
         'edt_attaquantY
         '
         Me.edt_attaquantY.Location = New System.Drawing.Point(374, 90)
         Me.edt_attaquantY.Name = "edt_attaquantY"
         Me.edt_attaquantY.Size = New System.Drawing.Size(100, 23)
-        Me.edt_attaquantY.TabIndex = 4
+        Me.edt_attaquantY.TabIndex = 3
         '
         'edt_cibleY
         '
@@ -106,11 +107,21 @@ Partial Class Form1
         Me.lbl_y.TabIndex = 8
         Me.lbl_y.Text = "Label2"
         '
+        'btn_affichage
+        '
+        Me.btn_affichage.Location = New System.Drawing.Point(120, 243)
+        Me.btn_affichage.Name = "btn_affichage"
+        Me.btn_affichage.Size = New System.Drawing.Size(101, 66)
+        Me.btn_affichage.TabIndex = 9
+        Me.btn_affichage.Text = "Button1"
+        Me.btn_affichage.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 665)
+        Me.Controls.Add(Me.btn_affichage)
         Me.Controls.Add(Me.lbl_y)
         Me.Controls.Add(Me.lbl_x)
         Me.Controls.Add(Me.lbl_tableau)
@@ -136,4 +147,5 @@ Partial Class Form1
     Friend WithEvents lbl_tableau As Label
     Friend WithEvents lbl_x As Label
     Friend WithEvents lbl_y As Label
+    Friend WithEvents btn_affichage As Button
 End Class

@@ -10,14 +10,7 @@
     Dim cibleX As Integer
     Dim cibleY As Integer
 
-    Dim pb As New PictureBox
-
     Dim PieceSelect As String
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lbl_x.Click
-
-    End Sub
-
 
     Dim cibleCase As String
     Dim board(,) As String =
@@ -38,12 +31,14 @@
 
     End Sub
 
-    Private Function test_positions(i As String)
-        Select Case i
+    Private Function test_positions(PosArg As String) As String
+        Select Case PosArg
+
             Case "bp"
                 If cibleX = posX And cibleY = posY + 1 Then
                     Affichage()
                 Else
+                    'attaqua diagonale
                     MessageBox.Show("position demandée impossible")
                 End If
 
@@ -53,20 +48,25 @@
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
+
             Case "bR" Or "wR"
                 tour()
+
             Case "wB" Or "bB"
                 If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
+
+
             Case "wp"
                 If cibleX = posX + 1 And cibleY = posY Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
+
             Case "bQ" Or "wQ"
                 If cibleX Then
 
@@ -97,10 +97,10 @@
 
         PieceSelect = board(posY, posX)
         cibleCase = board(cibleY, cibleX)
-
         MessageBox.Show(PieceSelect)
 
         test_positions(PieceSelect)
+
         'verification de coup non fraticide
         If PieceSelect = "bR" Or PieceSelect = "bN" Or PieceSelect = "bB" Or PieceSelect = "bQ" Or PieceSelect = "bK" Or PieceSelect = "bp" Then
             If cibleCase = "wR" Or cibleCase = "wN" Or cibleCase = "wB" Or cibleCase = "wQ" Or cibleCase = "wK" Or cibleCase = "___" Or cibleCase = "wp" Then
@@ -117,8 +117,6 @@
             End If
         End If
 
-        Affichage()
-
     End Sub
     Private Function Affichage()
         board(posY, posX) = "___"
@@ -133,7 +131,6 @@
                 End If
             Next
         Next
-        'MessageBox.Show(PieceSelect)
         Return 0
     End Function
     Private Function tour()
@@ -185,5 +182,15 @@
             max_cibleY = 7 And max_cibleY = 0
         End If
     End Function
+
+    'Private Sub edt_attaquantX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles edt_attaquantX.KeyPress
+    '    If e.KeyChar <=
+    '    End If
+    'End Sub
+    Private Sub btn_affichage_Click(sender As Object, e As EventArgs) Handles btn_affichage.Click
+        btn_affichage.Text = (PieceSelect)
+
+    End Sub
+
 End Class
 
