@@ -184,5 +184,10 @@
             max_cibleY = 7 And max_cibleY = 0
         End If
     End Function
+
+    'Private Sub edt_attaquantX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles edt_attaquantX.KeyPress
+    '    If e.KeyChar <=
+    '    End If
+    'End Sub
 End Class
 
