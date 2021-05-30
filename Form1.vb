@@ -42,17 +42,17 @@
                     MessageBox.Show("position demandée impossible")
                 End If
 
-            Case "bN" Or "wN"
-                If cibleX = posX + 1 Or cibleX = posX - 1 And cibleY = posY + 3 Or cibleY = posY - 3 OrElse cibleX = posX + 3 Or cibleX = posX - 3 And cibleY = posY + 1 Or cibleY = posY - 1 Then
+            Case "bN", "wN"
+                If cibleX = posX + 1 And cibleY = posY + 3 Or cibleX = posX - 1 And cibleY = posY + 3 Or cibleX = posX + 1 And cibleY = posY - 3 Or cibleX = posX + 1 And cibleY = posY - 3 OrElse cibleX = posX + 3 And cibleY = posY + 1 Or cibleX = posX - 3 And cibleY = posY + 1 Or cibleY = posY - 1 Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
 
-            Case "bR" Or "wR"
+            Case "bR", "wR"
                 tour()
 
-            Case "wB" Or "bB"
+            Case "wB", "bB"
                 If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
                     Affichage()
                 Else
@@ -67,12 +67,12 @@
                     MessageBox.Show("position demandée impossible")
                 End If
 
-            Case "bQ" Or "wQ"
+            Case "bQ", "wQ"
                 If cibleX Then
 
                 End If
 
-            Case "bK" Or "wK"
+            Case "bK", "wK"
                 If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY - 1 Then
                     Affichage()
                 Else
@@ -102,20 +102,23 @@
         test_positions(PieceSelect)
 
         'verification de coup non fraticide
-        If PieceSelect = "bR" Or PieceSelect = "bN" Or PieceSelect = "bB" Or PieceSelect = "bQ" Or PieceSelect = "bK" Or PieceSelect = "bp" Then
-            If cibleCase = "wR" Or cibleCase = "wN" Or cibleCase = "wB" Or cibleCase = "wQ" Or cibleCase = "wK" Or cibleCase = "___" Or cibleCase = "wp" Then
-            Else
-                MessageBox.Show("Coup invalide car fraticide")
-                Exit Sub
-            End If
-        ElseIf PieceSelect = "wR" Or PieceSelect = "wN" Or PieceSelect = "wB" Or PieceSelect = "wQ" Or PieceSelect = "wK" Or PieceSelect = "wp" Then
+        For i = posX To cibleX
 
-            If cibleCase = "bR" Or cibleCase = "bN" Or cibleCase = "bB" Or cibleCase = "bQ" Or cibleCase = "bK" Or cibleCase = "bp" Or cibleCase = "___" Then
-            Else
-                MessageBox.Show("Coup invalide car fraticide")
-                Exit Sub
+            If PieceSelect = "bR" Or PieceSelect = "bN" Or PieceSelect = "bB" Or PieceSelect = "bQ" Or PieceSelect = "bK" Or PieceSelect = "bp" Then
+                If cibleCase = "wR" Or cibleCase = "wN" Or cibleCase = "wB" Or cibleCase = "wQ" Or cibleCase = "wK" Or cibleCase = "___" Or cibleCase = "wp" Then
+                Else
+                    MessageBox.Show("Coup invalide car fraticide")
+                    Exit Sub
+                End If
+            ElseIf PieceSelect = "wR" Or PieceSelect = "wN" Or PieceSelect = "wB" Or PieceSelect = "wQ" Or PieceSelect = "wK" Or PieceSelect = "wp" Then
+
+                If cibleCase = "bR" Or cibleCase = "bN" Or cibleCase = "bB" Or cibleCase = "bQ" Or cibleCase = "bK" Or cibleCase = "bp" Or cibleCase = "___" Then
+                Else
+                    MessageBox.Show("Coup invalide car fraticide")
+                    Exit Sub
+                End If
             End If
-        End If
+        Next
 
     End Sub
     Private Function Affichage()
@@ -142,6 +145,8 @@
 
         If cibleX > max_cibleX Or cibleX < 0 Then
             MessageBox.Show("ce déplacement est impossible")
+        Else
+            Affichage()
         End If
 
         If posY = 0 Then
@@ -152,28 +157,8 @@
 
         If cibleY > max_cibleY Or cibleY < 0 Then
             MessageBox.Show("ce déplacement est impossible")
-        End If
-    End Function
-
-    Private Function reine()
-        If posX = 0 Then
-            max_cibleX = 7
-        ElseIf posX = 7 Then
-            max_cibleX = 0
-        End If
-
-        If cibleX > max_cibleX Or cibleX < 0 Then
-            MessageBox.Show("ce déplacement est impossible")
-        End If
-
-        If posY = 0 Then
-            max_cibleY = 7
-        ElseIf posY = 7 Then
-            max_cibleY = 0
-        End If
-
-        If cibleY > max_cibleY Or cibleY < 0 Then
-            MessageBox.Show("ce déplacement est impossible")
+        Else
+            Affichage()
         End If
     End Function
 
