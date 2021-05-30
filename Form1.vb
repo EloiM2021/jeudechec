@@ -92,6 +92,7 @@
 
         PieceSelect = board(posX, posY)
         cibleCase = board(cibleX, cibleY)
+        MessageBox.Show(PieceSelect)
 
         'verification de coup non fraticide
         If PieceSelect = "bR" Or PieceSelect = "bN" Or PieceSelect = "bB" Or PieceSelect = "bQ" Or PieceSelect = "bK" Or PieceSelect = "bp" Then
@@ -123,7 +124,6 @@
                 End If
             Next
         Next
-        MessageBox.Show(PieceSelect)
         Return 0
     End Function
 
@@ -171,6 +171,5 @@
         End If
     End Function
 
-    Private Function 
 End Class
 
