@@ -5,7 +5,6 @@
     Dim posY As Integer
     Dim posX_toreach As Integer
     Dim posY_toreach As Integer
-    Dim bp, wp, bR, bN, bB, bQ, bK, wR, wN, wB, wQ, wK As String
     Dim max_cibleX As Integer
     Dim max_cibleY As Integer
     Dim cibleX As Integer
@@ -40,41 +39,40 @@
     End Sub
 
     Private Function test_positions(i As String)
-        Select Case PieceSelect
-            Case bp
-                MessageBox.Show("ok")
+        Select Case i
+            Case "bp"
                 If cibleX = posX And cibleY = posY + 1 Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
 
-            Case bN Or wN
+            Case "bN" Or "wN"
                 If cibleX = posX + 1 Or cibleX = posX - 1 And cibleY = posY + 3 Or cibleY = posY - 3 OrElse cibleX = posX + 3 Or cibleX = posX - 3 And cibleY = posY + 1 Or cibleY = posY - 1 Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
-            Case bR Or wR
+            Case "bR" Or "wR"
                 tour()
-            Case wB Or bB
+            Case "wB" Or "bB"
                 If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
-            Case wp
+            Case "wp"
                 If cibleX = posX + 1 And cibleY = posY Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
-            Case bQ Or wQ
+            Case "bQ" Or "wQ"
                 If cibleX Then
 
                 End If
 
-            Case bK Or wK
+            Case "bK" Or "wK"
                 If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY - 1 Then
                     Affichage()
                 Else
@@ -97,8 +95,8 @@
         cibleX = edt_cibleX.Text
         cibleY = edt_cibleY.Text
 
-        PieceSelect = board(posX, posY)
-        cibleCase = board(cibleX, cibleY)
+        PieceSelect = board(posY, posX)
+        cibleCase = board(cibleY, cibleX)
 
         MessageBox.Show(PieceSelect)
 
@@ -123,8 +121,8 @@
 
     End Sub
     Private Function Affichage()
-        board(posX, posY) = "___"
-        board(cibleX, cibleY) = PieceSelect
+        board(posY, posX) = "___"
+        board(cibleY, cibleX) = PieceSelect
         For i = 0 To 7
 
             For j = 0 To 7
