@@ -66,15 +66,19 @@
                 End If
 
             Case "bR", "wR"
-
-
-            Case "wB", "bB"
-                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
+                If cibleX = posX + 1 And cibleY = posY Or cibleX = posX + 2 And cibleY = posY Or cibleX = posX + 3 And cibleY = posY Or cibleX = posX + 4 And cibleY = posY Or cibleX = posX + 5 And cibleY = posY Or cibleX = posX + 6 And cibleY = posY Or cibleX = posX + 7 And cibleY = posY Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
 
+
+            Case "wB", "bB"
+                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Then
+                    Affichage()
+                Else
+                    MessageBox.Show("position demandée impossible")
+                End If
 
             Case "wp"
                 If cibleX = posX And cibleY = posY - 1 Then
@@ -90,8 +94,10 @@
                 End If
 
             Case "bQ", "wQ"
-                If cibleX Then
-
+                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY Or cibleX = posX + 2 And cibleY = posY Or cibleX = posX + 3 And cibleY = posY Or cibleX = posX + 4 And cibleY = posY Or cibleX = posX + 5 And cibleY = posY Or cibleX = posX + 6 And cibleY = posY Or cibleX = posX + 7 And cibleY = posY Then
+                    Affichage()
+                Else
+                    MessageBox.Show("position demandée impossible")
                 End If
 
             Case "bK", "wK"
@@ -100,10 +106,6 @@
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
-                If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Then
-
-                End If
-
         End Select
     End Function
 
