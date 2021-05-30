@@ -16,11 +16,10 @@
         {"___", "___", "___", "___", "___", "___", "___", "___"},
         {"wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"},
         {"wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR"}}
-    Dim save(,) As String
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btn_retour.Enabled = False
-        save = board
         lbl_selection.Text = "Selection"
         lbl_plateau.Text = "Plateau:"
         btn_retour.Text = "Retour"
@@ -144,9 +143,9 @@
             cibleY = edt_cibleY.Text
 
             PieceSelect = board(posY, posX)
-            retourpiece = PieceSelect
+
             cibleCase = board(cibleY, cibleX)
-            retourcible = cibleCase
+
             'verification de coup non fraticide
 
 
