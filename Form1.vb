@@ -6,6 +6,7 @@
 
     Dim PieceSelect As String
 
+
     Dim cibleCase As String
     Dim board(,) As String =
         {{"bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"},
@@ -16,16 +17,30 @@
         {"___", "___", "___", "___", "___", "___", "___", "___"},
         {"wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"},
         {"wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR"}}
+    Dim save(,) As String = board
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lbl_selection.Text = "Selection"
+        lbl_plateau.Text = "Plateau:"
+        btn_retour.Text = "Retour"
         lbl_attaque.Text = "Attaque en:"
         btn_valider.Text = "valider"
         lbl_x.Text = "X"
         lbl_y.Text = "Y"
+        lbl_xbis.Text = "X"
+        lbl_ybis.Text = "Y"
         edt_attaquantX.MaxLength = 1
+        edt_attaquantY.MaxLength = 1
+        edt_cibleX.MaxLength = 1
+        edt_cibleY.MaxLength = 1
         lbl_erreur.Text = ("Remplissez tous les champs")
         lbl_erreur.Hide()
         lbl_tableau.ResetText()
+        lbl_x0123.Text = ("0     1     2     3     4     5     6     7")
+        lbl_y0123.Text = ("")
+        For i = 0 To 7
+            lbl_y0123.Text = lbl_y0123.Text + vbCr + CStr(i)
+        Next
 
         For i = 0 To 7
 
@@ -119,7 +134,7 @@
             Exit Sub
         Else
             lbl_erreur.Hide()
-
+            save = board
             posX = edt_attaquantX.Text
             posY = edt_attaquantY.Text
             cibleX = edt_cibleX.Text
@@ -201,5 +216,24 @@
         edt_cibleX.Text = ""
         edt_cibleY.Text = ""
     End Function
+
+    Private Sub btn_retour_Click(sender As Object, e As EventArgs) Handles btn_retour.Click
+        board = save
+        edt_attaquantX.Text = ""
+        edt_attaquantY.Text = ""
+        edt_cibleX.Text = ""
+        edt_cibleY.Text = ""
+        For i = 0 To 7
+
+            For j = 0 To 7
+                If j = 0 Then
+                    lbl_tableau.Text = lbl_tableau.Text + vbCr + save(i, j) + "  "
+                Else
+                    lbl_tableau.Text = lbl_tableau.Text + save(i, j) + "  "
+                End If
+            Next
+        Next
+    End Sub
+
 End Class
 
