@@ -52,7 +52,7 @@
                     Else
                         erreur()
                     End If
-                ElseIf posY = 1 And cibleY = 3 And posX = ciblex Then
+                ElseIf posY = 1 And cibleY = 3 And posX = cibleX Then
                     Affichage()
                 Else
                     erreur()
@@ -75,7 +75,7 @@
 
 
             Case "wB", "bB"
-                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Then
+                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 2 And cibleY = posY + 2 Or cibleX = posX - 2 And cibleY = posY - 2 Or cibleX = posX + 2 And cibleY = posY - 2 Or cibleX = posX - 2 And cibleY = posY + 2 Or cibleX = posX + 3 And cibleY = posY + 3 Or cibleX = posX - 3 And cibleY = posY - 3 Or cibleX = posX + 3 And cibleY = posY - 3 Or cibleX = posX - 3 And cibleY = posY + 3 Or cibleX = posX + 4 And cibleY = posY + 4 Or cibleX = posX - 4 And cibleY = posY - 4 Or cibleX = posX + 4 And cibleY = posY - 4 Or cibleX = posX - 4 And cibleY = posY + 4 Or cibleX = posX + 5 And cibleY = posY + 5 Or cibleX = posX - 5 And cibleY = posY - 5 Or cibleX = posX + 5 And cibleY = posY - 5 Or cibleX = posX - 5 And cibleY = posY + 5 Or cibleX = posX + 6 And cibleY = posY + 6 Or cibleX = posX - 6 And cibleY = posY - 6 Or cibleX = posX + 6 And cibleY = posY - 6 Or cibleX = posX - 6 And cibleY = posY + 6 Or cibleX = posX + 7 And cibleY = posY + 7 Or cibleX = posX - 7 And cibleY = posY - 7 Or cibleX = posX + 7 And cibleY = posY - 7 Or cibleX = posX - 7 And cibleY = posY + 7 Then
                     Affichage()
                 Else
                     erreur()
@@ -90,21 +90,21 @@
                     Else
                         erreur()
                     End If
-                ElseIf posY = 7 And cibleY = 5 And posX = ciblex Then
+                ElseIf posY = 7 And cibleY = 5 And posX = cibleX Then
                     Affichage()
                 Else
                     erreur()
                 End If
 
             Case "bQ", "wQ"
-                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY Or cibleX = posX + 2 And cibleY = posY Or cibleX = posX + 3 And cibleY = posY Or cibleX = posX + 4 And cibleY = posY Or cibleX = posX + 5 And cibleY = posY Or cibleX = posX + 6 And cibleY = posY Or cibleX = posX + 7 And cibleY = posY Or cibleX = posX And cibleY = posY + 1 Or cibleX = posX And cibleY = posY + 2 Or cibleX = posX And cibleY = posY + 3 Or cibleX = posX And cibleY = posY + 4 Or cibleX = posX And cibleY = posY + 5 Or cibleX = posX And cibleY = posY + 6 Or cibleX = posX And cibleY = posY + 7 Or cibleX = posX - 1 And cibleY = posY Or cibleX = posX - 2 And cibleY = posY Or cibleX = posX - 3 And cibleY = posY Or cibleX = posX - 4 And cibleY = posY Or cibleX = posX - 5 And cibleY = posY Or cibleX = posX - 6 And cibleY = posY Or cibleX = posX - 7 And cibleY = posY Or cibleX = posX And cibleY = posY - 1 Or cibleX = posX And cibleY = posY - 2 Or cibleX = posX And cibleY = posY - 3 Or cibleX = posX And cibleY = posY - 4 Or cibleX = posX And cibleY = posY - 5 Or cibleX = posX And cibleY = posY - 6 Or cibleX = posX And cibleY = posY - 7 Then
+                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 2 And cibleY = posY + 2 Or cibleX = posX - 2 And cibleY = posY - 2 Or cibleX = posX + 2 And cibleY = posY - 2 Or cibleX = posX - 2 And cibleY = posY + 2 Or cibleX = posX + 3 And cibleY = posY + 3 Or cibleX = posX - 3 And cibleY = posY - 3 Or cibleX = posX + 3 And cibleY = posY - 3 Or cibleX = posX - 3 And cibleY = posY + 3 Or cibleX = posX + 4 And cibleY = posY + 4 Or cibleX = posX - 4 And cibleY = posY - 4 Or cibleX = posX + 4 And cibleY = posY - 4 Or cibleX = posX - 4 And cibleY = posY + 4 Or cibleX = posX + 5 And cibleY = posY + 5 Or cibleX = posX - 5 And cibleY = posY - 5 Or cibleX = posX + 5 And cibleY = posY - 5 Or cibleX = posX - 5 And cibleY = posY + 5 Or cibleX = posX + 6 And cibleY = posY + 6 Or cibleX = posX - 6 And cibleY = posY - 6 Or cibleX = posX + 6 And cibleY = posY - 6 Or cibleX = posX - 6 And cibleY = posY + 6 Or cibleX = posX + 7 And cibleY = posY + 7 Or cibleX = posX - 7 And cibleY = posY - 7 Or cibleX = posX + 7 And cibleY = posY - 7 Or cibleX = posX - 7 And cibleY = posY + 7 Or cibleX = posX + 1 And cibleY = posY Or cibleX = posX + 2 And cibleY = posY Or cibleX = posX + 3 And cibleY = posY Or cibleX = posX + 4 And cibleY = posY Or cibleX = posX + 5 And cibleY = posY Or cibleX = posX + 6 And cibleY = posY Or cibleX = posX + 7 And cibleY = posY Or cibleX = posX And cibleY = posY + 1 Or cibleX = posX And cibleY = posY + 2 Or cibleX = posX And cibleY = posY + 3 Or cibleX = posX And cibleY = posY + 4 Or cibleX = posX And cibleY = posY + 5 Or cibleX = posX And cibleY = posY + 6 Or cibleX = posX And cibleY = posY + 7 Or cibleX = posX - 1 And cibleY = posY Or cibleX = posX - 2 And cibleY = posY Or cibleX = posX - 3 And cibleY = posY Or cibleX = posX - 4 And cibleY = posY Or cibleX = posX - 5 And cibleY = posY Or cibleX = posX - 6 And cibleY = posY Or cibleX = posX - 7 And cibleY = posY Or cibleX = posX And cibleY = posY - 1 Or cibleX = posX And cibleY = posY - 2 Or cibleX = posX And cibleY = posY - 3 Or cibleX = posX And cibleY = posY - 4 Or cibleX = posX And cibleY = posY - 5 Or cibleX = posX And cibleY = posY - 6 Or cibleX = posX And cibleY = posY - 7 Then
                     Affichage()
                 Else
                     erreur()
                 End If
 
             Case "bK", "wK"
-                If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY - 1 Then
+                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY Or cibleX = posX And cibleY = posY + 1 Then
                     Affichage()
                 Else
                     erreur()
@@ -127,7 +127,6 @@
 
             PieceSelect = board(posY, posX)
             cibleCase = board(cibleY, cibleX)
-
             'verification de coup non fraticide
             For i = posX To cibleX
 
