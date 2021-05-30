@@ -44,6 +44,7 @@
                 If cibleX = posX And cibleY = posY - 1 Then
                     posX = cibleX
                 Else
+                    'attaqua diagonale
                     MessageBox.Show("position demandée impossible")
                 End If
 
@@ -107,7 +108,6 @@
         cibleCase = board(cibleX, cibleY)
         MessageBox.Show(PieceSelect)
 
-        MessageBox.Show(PieceSelect)
 
         test_positions()
         'verification de coup non fraticide
@@ -125,8 +125,6 @@
                 Exit Sub
             End If
         End If
-
-        Affichage()
 
     End Sub
     Private Function Affichage()

@@ -63,14 +63,14 @@ Partial Class Form1
         Me.edt_cibleX.Location = New System.Drawing.Point(221, 155)
         Me.edt_cibleX.Name = "edt_cibleX"
         Me.edt_cibleX.Size = New System.Drawing.Size(100, 23)
-        Me.edt_cibleX.TabIndex = 3
+        Me.edt_cibleX.TabIndex = 4
         '
         'edt_attaquantY
         '
         Me.edt_attaquantY.Location = New System.Drawing.Point(374, 90)
         Me.edt_attaquantY.Name = "edt_attaquantY"
         Me.edt_attaquantY.Size = New System.Drawing.Size(100, 23)
-        Me.edt_attaquantY.TabIndex = 4
+        Me.edt_attaquantY.TabIndex = 3
         '
         'edt_cibleY
         '
