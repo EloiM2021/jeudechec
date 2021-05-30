@@ -5,20 +5,12 @@
     Dim posY As Integer
     Dim posX_toreach As Integer
     Dim posY_toreach As Integer
-    Dim bp, wp, bR, bN, bB, bQ, bK, wR, wN, wB, wQ, wK As String
     Dim max_cibleX As Integer
     Dim max_cibleY As Integer
     Dim cibleX As Integer
     Dim cibleY As Integer
 
-    Dim pb As New PictureBox
-
     Dim PieceSelect As String
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lbl_x.Click
-
-    End Sub
-
 
     Dim cibleCase As String
     Dim board(,) As String =
@@ -39,10 +31,10 @@
 
     End Sub
 
-    Private Function test_positions(i As String)
-        Select Case PieceSelect
-            Case bp
-                MessageBox.Show("ok")
+    Private Function test_positions(PosArg As String) As String
+        Select Case PosArg
+
+            Case "bp"
                 If cibleX = posX And cibleY = posY + 1 Then
                     Affichage()
                 Else
@@ -50,32 +42,37 @@
                     MessageBox.Show("position demandée impossible")
                 End If
 
-            Case bN Or wN
+            Case "bN" Or "wN"
                 If cibleX = posX + 1 Or cibleX = posX - 1 And cibleY = posY + 3 Or cibleY = posY - 3 OrElse cibleX = posX + 3 Or cibleX = posX - 3 And cibleY = posY + 1 Or cibleY = posY - 1 Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
-            Case bR Or wR
+
+            Case "bR" Or "wR"
                 tour()
-            Case wB Or bB
+
+            Case "wB" Or "bB"
                 If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
-            Case wp
+
+
+            Case "wp"
                 If cibleX = posX + 1 And cibleY = posY Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
-            Case bQ Or wQ
+
+            Case "bQ" Or "wQ"
                 If cibleX Then
 
                 End If
 
-            Case bK Or wK
+            Case "bK" Or "wK"
                 If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY - 1 Then
                     Affichage()
                 Else
@@ -98,11 +95,12 @@
         cibleX = edt_cibleX.Text
         cibleY = edt_cibleY.Text
 
-        PieceSelect = board(posX, posY)
-        cibleCase = board(cibleX, cibleY)
+        PieceSelect = board(posY, posX)
+        cibleCase = board(cibleY, cibleX)
         MessageBox.Show(PieceSelect)
 
         test_positions(PieceSelect)
+
         'verification de coup non fraticide
         If PieceSelect = "bR" Or PieceSelect = "bN" Or PieceSelect = "bB" Or PieceSelect = "bQ" Or PieceSelect = "bK" Or PieceSelect = "bp" Then
             If cibleCase = "wR" Or cibleCase = "wN" Or cibleCase = "wB" Or cibleCase = "wQ" Or cibleCase = "wK" Or cibleCase = "___" Or cibleCase = "wp" Then
@@ -121,8 +119,8 @@
 
     End Sub
     Private Function Affichage()
-        board(posX, posY) = "___"
-        board(cibleX, cibleY) = PieceSelect
+        board(posY, posX) = "___"
+        board(cibleY, cibleX) = PieceSelect
         For i = 0 To 7
 
             For j = 0 To 7
@@ -133,7 +131,6 @@
                 End If
             Next
         Next
-        'MessageBox.Show(PieceSelect)
         Return 0
     End Function
     Private Function tour()
@@ -190,5 +187,10 @@
     '    If e.KeyChar <=
     '    End If
     'End Sub
+    Private Sub btn_affichage_Click(sender As Object, e As EventArgs) Handles btn_affichage.Click
+        btn_affichage.Text = (PieceSelect)
+
+    End Sub
+
 End Class
 
