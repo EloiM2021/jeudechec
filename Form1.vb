@@ -50,26 +50,27 @@
                     If cibleCase = "wR" Or cibleCase = "wN" Or cibleCase = "wB" Or cibleCase = "wQ" Or cibleCase = "wK" Or cibleCase = "wp" Then
                         Affichage()
                     Else
-                        MessageBox.Show("position demandée impossible")
+                        erreur()
                     End If
-
-                    'attaqua diagonale
-                    MessageBox.Show("position demandée impossible")
-
+                ElseIf posY = 1 And cibleY = 3 And posX = ciblex Then
+                    Affichage()
+                Else
+                    erreur()
                 End If
+
 
             Case "bN", "wN"
                 If cibleX = posX + 1 And cibleY = posY + 3 Or cibleX = posX - 1 And cibleY = posY + 3 Or cibleX = posX + 1 And cibleY = posY - 3 Or cibleX = posX + 1 And cibleY = posY - 3 OrElse cibleX = posX + 3 And cibleY = posY + 1 Or cibleX = posX - 3 And cibleY = posY + 1 Or cibleY = posY - 1 Then
                     Affichage()
                 Else
-                    MessageBox.Show("position demandée impossible")
+                    erreur()
                 End If
 
             Case "bR", "wR"
                 If cibleX = posX + 1 And cibleY = posY Or cibleX = posX + 2 And cibleY = posY Or cibleX = posX + 3 And cibleY = posY Or cibleX = posX + 4 And cibleY = posY Or cibleX = posX + 5 And cibleY = posY Or cibleX = posX + 6 And cibleY = posY Or cibleX = posX + 7 And cibleY = posY Or cibleX = posX And cibleY = posY + 1 Or cibleX = posX And cibleY = posY + 2 Or cibleX = posX And cibleY = posY + 3 Or cibleX = posX And cibleY = posY + 4 Or cibleX = posX And cibleY = posY + 5 Or cibleX = posX And cibleY = posY + 6 Or cibleX = posX And cibleY = posY + 7 Or cibleX = posX - 1 And cibleY = posY Or cibleX = posX - 2 And cibleY = posY Or cibleX = posX - 3 And cibleY = posY Or cibleX = posX - 4 And cibleY = posY Or cibleX = posX - 5 And cibleY = posY Or cibleX = posX - 6 And cibleY = posY Or cibleX = posX - 7 And cibleY = posY Or cibleX = posX And cibleY = posY - 1 Or cibleX = posX And cibleY = posY - 2 Or cibleX = posX And cibleY = posY - 3 Or cibleX = posX And cibleY = posY - 4 Or cibleX = posX And cibleY = posY - 5 Or cibleX = posX And cibleY = posY - 6 Or cibleX = posX And cibleY = posY - 7 Then
                     Affichage()
                 Else
-                    MessageBox.Show("position demandée impossible")
+                    erreur()
                 End If
 
 
@@ -77,7 +78,7 @@
                 If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Then
                     Affichage()
                 Else
-                    MessageBox.Show("position demandée impossible")
+                    erreur()
                 End If
 
             Case "wp"
@@ -87,24 +88,26 @@
                     If cibleCase = "bR" Or cibleCase = "bN" Or cibleCase = "bB" Or cibleCase = "bQ" Or cibleCase = "bK" Or cibleCase = "bp" Then
                         Affichage()
                     Else
-                        MessageBox.Show("position demandée impossible")
+                        erreur()
                     End If
+                ElseIf posY = 7 And cibleY = 5 And posX = ciblex Then
+                    Affichage()
                 Else
-                    MessageBox.Show("position demandée impossible")
+                    erreur()
                 End If
 
             Case "bQ", "wQ"
                 If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY Or cibleX = posX + 2 And cibleY = posY Or cibleX = posX + 3 And cibleY = posY Or cibleX = posX + 4 And cibleY = posY Or cibleX = posX + 5 And cibleY = posY Or cibleX = posX + 6 And cibleY = posY Or cibleX = posX + 7 And cibleY = posY Or cibleX = posX And cibleY = posY + 1 Or cibleX = posX And cibleY = posY + 2 Or cibleX = posX And cibleY = posY + 3 Or cibleX = posX And cibleY = posY + 4 Or cibleX = posX And cibleY = posY + 5 Or cibleX = posX And cibleY = posY + 6 Or cibleX = posX And cibleY = posY + 7 Or cibleX = posX - 1 And cibleY = posY Or cibleX = posX - 2 And cibleY = posY Or cibleX = posX - 3 And cibleY = posY Or cibleX = posX - 4 And cibleY = posY Or cibleX = posX - 5 And cibleY = posY Or cibleX = posX - 6 And cibleY = posY Or cibleX = posX - 7 And cibleY = posY Or cibleX = posX And cibleY = posY - 1 Or cibleX = posX And cibleY = posY - 2 Or cibleX = posX And cibleY = posY - 3 Or cibleX = posX And cibleY = posY - 4 Or cibleX = posX And cibleY = posY - 5 Or cibleX = posX And cibleY = posY - 6 Or cibleX = posX And cibleY = posY - 7 Then
                     Affichage()
                 Else
-                    MessageBox.Show("position demandée impossible")
+                    erreur()
                 End If
 
             Case "bK", "wK"
                 If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY - 1 Then
                     Affichage()
                 Else
-                    MessageBox.Show("position demandée impossible")
+                    erreur()
                 End If
         End Select
     End Function
@@ -125,8 +128,6 @@
             PieceSelect = board(posY, posX)
             cibleCase = board(cibleY, cibleX)
 
-            test_positions(PieceSelect)
-
             'verification de coup non fraticide
             For i = posX To cibleX
 
@@ -145,6 +146,7 @@
                     End If
                 End If
             Next
+            test_positions(PieceSelect)
         End If
 
     End Sub
@@ -166,7 +168,6 @@
     End Function
 
     Private Function KeyBlocker(e As KeyPressEventArgs)
-
 
         If (e.KeyChar >= Chr(48) And e.KeyChar <= Chr(55)) Then
             Exit Function
@@ -198,5 +199,12 @@
     Private Sub edt_cibleY_KeyPress(sender As Object, e As KeyPressEventArgs) Handles edt_cibleY.KeyPress
         KeyBlocker(e)
     End Sub
+    Private Function erreur()
+        MessageBox.Show("position demandée impossible")
+        edt_attaquantX.Text = ""
+        edt_attaquantY.Text = ""
+        edt_cibleX.Text = ""
+        edt_cibleY.Text = ""
+    End Function
 End Class
 
