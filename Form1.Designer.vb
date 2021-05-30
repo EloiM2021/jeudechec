@@ -29,6 +29,8 @@ Partial Class Form1
         Me.edt_attaquantY = New System.Windows.Forms.TextBox()
         Me.edt_cibleY = New System.Windows.Forms.TextBox()
         Me.lbl_tableau = New System.Windows.Forms.Label()
+        Me.lbl_x = New System.Windows.Forms.Label()
+        Me.lbl_y = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_valider
@@ -80,17 +82,37 @@ Partial Class Form1
         'lbl_tableau
         '
         Me.lbl_tableau.AutoSize = True
-        Me.lbl_tableau.Location = New System.Drawing.Point(319, 237)
+        Me.lbl_tableau.Location = New System.Drawing.Point(329, 222)
         Me.lbl_tableau.Name = "lbl_tableau"
         Me.lbl_tableau.Size = New System.Drawing.Size(41, 15)
         Me.lbl_tableau.TabIndex = 6
         Me.lbl_tableau.Text = "Label1"
+        '
+        'lbl_x
+        '
+        Me.lbl_x.AutoSize = True
+        Me.lbl_x.Location = New System.Drawing.Point(251, 72)
+        Me.lbl_x.Name = "lbl_x"
+        Me.lbl_x.Size = New System.Drawing.Size(38, 15)
+        Me.lbl_x.TabIndex = 7
+        Me.lbl_x.Text = "label3"
+        '
+        'lbl_y
+        '
+        Me.lbl_y.AutoSize = True
+        Me.lbl_y.Location = New System.Drawing.Point(403, 72)
+        Me.lbl_y.Name = "lbl_y"
+        Me.lbl_y.Size = New System.Drawing.Size(41, 15)
+        Me.lbl_y.TabIndex = 8
+        Me.lbl_y.Text = "Label2"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 665)
+        Me.Controls.Add(Me.lbl_y)
+        Me.Controls.Add(Me.lbl_x)
         Me.Controls.Add(Me.lbl_tableau)
         Me.Controls.Add(Me.edt_cibleY)
         Me.Controls.Add(Me.edt_attaquantY)
@@ -112,4 +134,6 @@ Partial Class Form1
     Friend WithEvents edt_attaquantY As TextBox
     Friend WithEvents edt_cibleY As TextBox
     Friend WithEvents lbl_tableau As Label
+    Friend WithEvents lbl_x As Label
+    Friend WithEvents lbl_y As Label
 End Class
