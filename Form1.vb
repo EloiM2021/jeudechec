@@ -8,6 +8,8 @@
     Dim bp, wp, bR, bN, bB, bQ, bK, wR, wN, wB, wQ, wK As String
     Dim max_cibleX As Integer
     Dim max_cibleY As Integer
+    Dim cibleX As Integer
+    Dim cibleY As Integer
 
     Dim pb As New PictureBox
 
@@ -17,8 +19,7 @@
 
     End Sub
 
-    Dim cibleX As Integer
-    Dim cibleY As Integer
+
     Dim cibleCase As String
     Dim board(,) As String =
         {{"bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"},
@@ -38,9 +39,10 @@
 
     End Sub
 
-    Private Function test_positions()
+    Private Function test_positions(i As String)
         Select Case PieceSelect
             Case bp
+                MessageBox.Show("ok")
                 If cibleX = posX And cibleY = posY + 1 Then
                     Affichage()
                 Else
@@ -100,8 +102,7 @@
         cibleCase = board(cibleX, cibleY)
         MessageBox.Show(PieceSelect)
 
-
-        test_positions()
+        test_positions(PieceSelect)
         'verification de coup non fraticide
         If PieceSelect = "bR" Or PieceSelect = "bN" Or PieceSelect = "bB" Or PieceSelect = "bQ" Or PieceSelect = "bK" Or PieceSelect = "bp" Then
             If cibleCase = "wR" Or cibleCase = "wN" Or cibleCase = "wB" Or cibleCase = "wQ" Or cibleCase = "wK" Or cibleCase = "___" Or cibleCase = "wp" Then
