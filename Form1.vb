@@ -1,10 +1,7 @@
 ﻿Public Class Form1
-    Dim whatobject As String
-    Dim actualposition As Integer
     Dim posX As Integer
     Dim posY As Integer
-    Dim posX_toreach As Integer
-    Dim posY_toreach As Integer
+
     Dim max_cibleX As Integer
     Dim max_cibleY As Integer
     Dim cibleX As Integer
@@ -28,6 +25,7 @@
         btn_valider.Text = "valider"
         lbl_x.Text = "X"
         lbl_y.Text = "y"
+        edt_attaquantX.MaxLength = 1
 
     End Sub
 
@@ -40,6 +38,7 @@
                 Else
                     'attaqua diagonale
                     MessageBox.Show("position demandée impossible")
+
                 End If
 
             Case "bN", "wN"
@@ -80,7 +79,6 @@
                 End If
                 If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Then
 
-
                 End If
 
         End Select
@@ -89,7 +87,6 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_valider.Click
         lbl_tableau.ResetText()
-
         posX = edt_attaquantX.Text
         posY = edt_attaquantY.Text
         cibleX = edt_cibleX.Text
@@ -97,7 +94,6 @@
 
         PieceSelect = board(posY, posX)
         cibleCase = board(cibleY, cibleX)
-        MessageBox.Show(PieceSelect)
 
         test_positions(PieceSelect)
 
@@ -168,14 +164,38 @@
         End If
     End Function
 
-    'Private Sub edt_attaquantX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles edt_attaquantX.KeyPress
-    '    If e.KeyChar <=
-    '    End If
-    'End Sub
+    Private Function KeyBlocker(e As KeyPressEventArgs)
+
+
+        If (e.KeyChar >= Chr(48) And e.KeyChar <= Chr(55)) Then
+            Exit Function
+
+        ElseIf e.KeyChar = Chr(8) Then
+
+            Exit Function
+        Else
+            e.Handled = True
+        End If
+        Return 0
+    End Function
     Private Sub btn_affichage_Click(sender As Object, e As EventArgs) Handles btn_affichage.Click
         btn_affichage.Text = (PieceSelect)
 
     End Sub
+    Private Sub edt_attaquantX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles edt_attaquantX.KeyPress
+        KeyBlocker(e)
+    End Sub
 
+    Private Sub edt_attaquantY_KeyPress(sender As Object, e As KeyPressEventArgs) Handles edt_attaquantY.KeyPress
+        KeyBlocker(e)
+    End Sub
+
+    Private Sub edt_cibleX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles edt_cibleX.KeyPress
+        KeyBlocker(e)
+    End Sub
+
+    Private Sub edt_cibleY_KeyPress(sender As Object, e As KeyPressEventArgs) Handles edt_cibleY.KeyPress
+        KeyBlocker(e)
+    End Sub
 End Class
 
