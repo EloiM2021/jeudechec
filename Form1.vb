@@ -49,26 +49,31 @@
                 End If
 
             Case "bR", "wR"
-                tour()
-
-            Case "wB", "bB"
-                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
+                If cibleX = posX + 1 And cibleY = posY Or cibleX = posX + 2 And cibleY = posY Or cibleX = posX + 3 And cibleY = posY Or cibleX = posX + 4 And cibleY = posY Or cibleX = posX + 5 And cibleY = posY Or cibleX = posX + 6 And cibleY = posY Or cibleX = posX + 7 And cibleY = posY Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
 
+            Case "wB", "bB"
+                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Then
+                    Affichage()
+                Else
+                    MessageBox.Show("position demandée impossible")
+                End If
 
             Case "wp"
-                If cibleX = posX + 1 And cibleY = posY Then
+                If cibleX = posX - 1 And cibleY = posY Then
                     Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
 
             Case "bQ", "wQ"
-                If cibleX Then
-
+                If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX + 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY Or cibleX = posX + 2 And cibleY = posY Or cibleX = posX + 3 And cibleY = posY Or cibleX = posX + 4 And cibleY = posY Or cibleX = posX + 5 And cibleY = posY Or cibleX = posX + 6 And cibleY = posY Or cibleX = posX + 7 And cibleY = posY Then
+                    Affichage()
+                Else
+                    MessageBox.Show("position demandée impossible")
                 End If
 
             Case "bK", "wK"
@@ -77,10 +82,6 @@
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
-                If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Then
-
-                End If
-
         End Select
     End Function
 
@@ -131,37 +132,6 @@
             Next
         Next
         Return 0
-    End Function
-    Private Function tour()
-        If posX = 0 Then
-            max_cibleX = 7
-        ElseIf posX = 7 Then
-            max_cibleX = 0
-        End If
-
-        If cibleX > max_cibleX Or cibleX < 0 Then
-            MessageBox.Show("ce déplacement est impossible")
-        Else
-            Affichage()
-        End If
-
-        If posY = 0 Then
-            max_cibleY = 7
-        ElseIf posY = 7 Then
-            max_cibleY = 0
-        End If
-
-        If cibleY > max_cibleY Or cibleY < 0 Then
-            MessageBox.Show("ce déplacement est impossible")
-        Else
-            Affichage()
-        End If
-    End Function
-
-    Private Function fou()
-        If posY = 0 Or posY = 7 Then
-            max_cibleY = 7 And max_cibleY = 0
-        End If
     End Function
 
     Private Function KeyBlocker(e As KeyPressEventArgs)
