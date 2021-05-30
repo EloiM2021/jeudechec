@@ -3,7 +3,6 @@
     Dim posY As Integer
     Dim cibleX As Integer
     Dim cibleY As Integer
-
     Dim PieceSelect As String
 
 
@@ -17,9 +16,11 @@
         {"___", "___", "___", "___", "___", "___", "___", "___"},
         {"wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"},
         {"wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR"}}
-    Dim save(,) As String = board
+    Dim save(,) As String
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btn_retour.Enabled = False
+        save = board
         lbl_selection.Text = "Selection"
         lbl_plateau.Text = "Plateau:"
         btn_retour.Text = "Retour"
@@ -124,6 +125,8 @@
                 Else
                     erreur()
                 End If
+            Case "___"
+                erreur()
         End Select
     End Function
 
@@ -133,33 +136,34 @@
             lbl_erreur.Show()
             Exit Sub
         Else
+            btn_retour.Enabled = True
             lbl_erreur.Hide()
-            save = board
             posX = edt_attaquantX.Text
             posY = edt_attaquantY.Text
             cibleX = edt_cibleX.Text
             cibleY = edt_cibleY.Text
 
             PieceSelect = board(posY, posX)
+            retourpiece = PieceSelect
             cibleCase = board(cibleY, cibleX)
+            retourcible = cibleCase
             'verification de coup non fraticide
-            For i = posX To cibleX
 
-                If PieceSelect = "bR" Or PieceSelect = "bN" Or PieceSelect = "bB" Or PieceSelect = "bQ" Or PieceSelect = "bK" Or PieceSelect = "bp" Then
-                    If cibleCase = "wR" Or cibleCase = "wN" Or cibleCase = "wB" Or cibleCase = "wQ" Or cibleCase = "wK" Or cibleCase = "___" Or cibleCase = "wp" Then
-                    Else
-                        MessageBox.Show("Coup invalide car fraticide")
-                        Exit Sub
-                    End If
-                ElseIf PieceSelect = "wR" Or PieceSelect = "wN" Or PieceSelect = "wB" Or PieceSelect = "wQ" Or PieceSelect = "wK" Or PieceSelect = "wp" Then
 
-                    If cibleCase = "bR" Or cibleCase = "bN" Or cibleCase = "bB" Or cibleCase = "bQ" Or cibleCase = "bK" Or cibleCase = "bp" Or cibleCase = "___" Then
-                    Else
-                        MessageBox.Show("Coup invalide car fraticide")
-                        Exit Sub
-                    End If
+            If PieceSelect = "bR" Or PieceSelect = "bN" Or PieceSelect = "bB" Or PieceSelect = "bQ" Or PieceSelect = "bK" Or PieceSelect = "bp" Then
+                If cibleCase = "wR" Or cibleCase = "wN" Or cibleCase = "wB" Or cibleCase = "wQ" Or cibleCase = "wK" Or cibleCase = "___" Or cibleCase = "wp" Then
+                Else
+                    MessageBox.Show("Coup invalide car fraticide")
+                    Exit Sub
                 End If
-            Next
+            ElseIf PieceSelect = "wR" Or PieceSelect = "wN" Or PieceSelect = "wB" Or PieceSelect = "wQ" Or PieceSelect = "wK" Or PieceSelect = "wp" Then
+
+                If cibleCase = "bR" Or cibleCase = "bN" Or cibleCase = "bB" Or cibleCase = "bQ" Or cibleCase = "bK" Or cibleCase = "bp" Or cibleCase = "___" Then
+                Else
+                    MessageBox.Show("Coup invalide car fraticide")
+                    Exit Sub
+                End If
+            End If
             test_positions(PieceSelect)
         End If
 
@@ -218,18 +222,21 @@
     End Function
 
     Private Sub btn_retour_Click(sender As Object, e As EventArgs) Handles btn_retour.Click
-        board = save
+        lbl_tableau.Text = ""
         edt_attaquantX.Text = ""
         edt_attaquantY.Text = ""
         edt_cibleX.Text = ""
         edt_cibleY.Text = ""
+
+        board(posY, posX) = PieceSelect
+        board(cibleY, cibleX) = cibleCase
         For i = 0 To 7
 
             For j = 0 To 7
                 If j = 0 Then
-                    lbl_tableau.Text = lbl_tableau.Text + vbCr + save(i, j) + "  "
+                    lbl_tableau.Text = lbl_tableau.Text + vbCr + board(i, j) + "  "
                 Else
-                    lbl_tableau.Text = lbl_tableau.Text + save(i, j) + "  "
+                    lbl_tableau.Text = lbl_tableau.Text + board(i, j) + "  "
                 End If
             Next
         Next
