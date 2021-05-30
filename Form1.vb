@@ -41,36 +41,29 @@
     Private Function test_positions()
         Select Case PieceSelect
             Case bp
-                If cibleX = posX And cibleY = posY - 1 Then
-                    posX = cibleX
+                If cibleX = posX And cibleY = posY + 1 Then
+                    Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
 
             Case bN Or wN
                 If cibleX = posX + 1 Or cibleX = posX - 1 And cibleY = posY + 3 Or cibleY = posY - 3 OrElse cibleX = posX + 3 Or cibleX = posX - 3 And cibleY = posY + 1 Or cibleY = posY - 1 Then
-                    posX = cibleX
-                    posY = cibleY
+                    Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
             Case bR Or wR
-                If cibleX = posX + 10 Or posX - 10 And cibleY = posY OrElse cibleX = posX And cibleY = posY + 10 Or posY - 10 Then
-                    posX = cibleX
-                    posY = cibleY
-                Else
-                    MessageBox.Show("position demandée impossible")
-                End If
+                tour()
             Case wB Or bB
                 If cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Then
-                    posX = cibleX
-                    posY = cibleY
+                    Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
             Case wp
                 If cibleX = posX + 1 And cibleY = posY Then
-                    posY = cibleY
+                    Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
@@ -81,8 +74,7 @@
 
             Case bK Or wK
                 If cibleX = posX - 1 Or cibleX = posX + 1 Or cibleY = posY - 1 Or cibleY = posY + 1 Or cibleX = posX - 1 And cibleY = posY - 1 Or cibleX = posX - 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY + 1 Or cibleX = posX + 1 And cibleY = posY - 1 Then
-                    posX = cibleX
-                    posY = cibleY
+                    Affichage()
                 Else
                     MessageBox.Show("position demandée impossible")
                 End If
