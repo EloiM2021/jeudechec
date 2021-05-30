@@ -32,6 +32,7 @@ Partial Class Form1
         Me.lbl_x = New System.Windows.Forms.Label()
         Me.lbl_y = New System.Windows.Forms.Label()
         Me.btn_affichage = New System.Windows.Forms.Button()
+        Me.lbl_erreur = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn_valider
@@ -46,7 +47,7 @@ Partial Class Form1
         'lbl_attaque
         '
         Me.lbl_attaque.AutoSize = True
-        Me.lbl_attaque.Location = New System.Drawing.Point(251, 127)
+        Me.lbl_attaque.Location = New System.Drawing.Point(280, 127)
         Me.lbl_attaque.Name = "lbl_attaque"
         Me.lbl_attaque.Size = New System.Drawing.Size(41, 15)
         Me.lbl_attaque.TabIndex = 1
@@ -54,30 +55,30 @@ Partial Class Form1
         '
         'edt_attaquantX
         '
-        Me.edt_attaquantX.Location = New System.Drawing.Point(221, 90)
+        Me.edt_attaquantX.Location = New System.Drawing.Point(296, 90)
         Me.edt_attaquantX.Name = "edt_attaquantX"
-        Me.edt_attaquantX.Size = New System.Drawing.Size(100, 23)
+        Me.edt_attaquantX.Size = New System.Drawing.Size(25, 23)
         Me.edt_attaquantX.TabIndex = 2
         '
         'edt_cibleX
         '
-        Me.edt_cibleX.Location = New System.Drawing.Point(221, 155)
+        Me.edt_cibleX.Location = New System.Drawing.Point(296, 155)
         Me.edt_cibleX.Name = "edt_cibleX"
-        Me.edt_cibleX.Size = New System.Drawing.Size(100, 23)
+        Me.edt_cibleX.Size = New System.Drawing.Size(25, 23)
         Me.edt_cibleX.TabIndex = 4
         '
         'edt_attaquantY
         '
-        Me.edt_attaquantY.Location = New System.Drawing.Point(374, 90)
+        Me.edt_attaquantY.Location = New System.Drawing.Point(327, 90)
         Me.edt_attaquantY.Name = "edt_attaquantY"
-        Me.edt_attaquantY.Size = New System.Drawing.Size(100, 23)
+        Me.edt_attaquantY.Size = New System.Drawing.Size(25, 23)
         Me.edt_attaquantY.TabIndex = 3
         '
         'edt_cibleY
         '
-        Me.edt_cibleY.Location = New System.Drawing.Point(374, 155)
+        Me.edt_cibleY.Location = New System.Drawing.Point(327, 155)
         Me.edt_cibleY.Name = "edt_cibleY"
-        Me.edt_cibleY.Size = New System.Drawing.Size(100, 23)
+        Me.edt_cibleY.Size = New System.Drawing.Size(25, 23)
         Me.edt_cibleY.TabIndex = 5
         '
         'lbl_tableau
@@ -92,7 +93,7 @@ Partial Class Form1
         'lbl_x
         '
         Me.lbl_x.AutoSize = True
-        Me.lbl_x.Location = New System.Drawing.Point(251, 72)
+        Me.lbl_x.Location = New System.Drawing.Point(283, 62)
         Me.lbl_x.Name = "lbl_x"
         Me.lbl_x.Size = New System.Drawing.Size(38, 15)
         Me.lbl_x.TabIndex = 7
@@ -101,7 +102,7 @@ Partial Class Form1
         'lbl_y
         '
         Me.lbl_y.AutoSize = True
-        Me.lbl_y.Location = New System.Drawing.Point(403, 72)
+        Me.lbl_y.Location = New System.Drawing.Point(327, 62)
         Me.lbl_y.Name = "lbl_y"
         Me.lbl_y.Size = New System.Drawing.Size(41, 15)
         Me.lbl_y.TabIndex = 8
@@ -109,18 +110,29 @@ Partial Class Form1
         '
         'btn_affichage
         '
-        Me.btn_affichage.Location = New System.Drawing.Point(120, 243)
+        Me.btn_affichage.Location = New System.Drawing.Point(43, 222)
         Me.btn_affichage.Name = "btn_affichage"
         Me.btn_affichage.Size = New System.Drawing.Size(101, 66)
         Me.btn_affichage.TabIndex = 9
         Me.btn_affichage.Text = "Button1"
         Me.btn_affichage.UseVisualStyleBackColor = True
         '
+        'lbl_erreur
+        '
+        Me.lbl_erreur.AutoSize = True
+        Me.lbl_erreur.Cursor = System.Windows.Forms.Cursors.No
+        Me.lbl_erreur.Location = New System.Drawing.Point(68, 182)
+        Me.lbl_erreur.Name = "lbl_erreur"
+        Me.lbl_erreur.Size = New System.Drawing.Size(38, 15)
+        Me.lbl_erreur.TabIndex = 10
+        Me.lbl_erreur.Text = "label4"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 665)
+        Me.ClientSize = New System.Drawing.Size(687, 462)
+        Me.Controls.Add(Me.lbl_erreur)
         Me.Controls.Add(Me.btn_affichage)
         Me.Controls.Add(Me.lbl_y)
         Me.Controls.Add(Me.lbl_x)
@@ -148,4 +160,6 @@ Partial Class Form1
     Friend WithEvents lbl_x As Label
     Friend WithEvents lbl_y As Label
     Friend WithEvents btn_affichage As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lbl_erreur As Label
 End Class
