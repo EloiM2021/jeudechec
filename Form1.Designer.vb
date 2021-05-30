@@ -31,7 +31,6 @@ Partial Class Form1
         Me.lbl_tableau = New System.Windows.Forms.Label()
         Me.lbl_x = New System.Windows.Forms.Label()
         Me.lbl_y = New System.Windows.Forms.Label()
-        Me.btn_affichage = New System.Windows.Forms.Button()
         Me.lbl_erreur = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -108,15 +107,6 @@ Partial Class Form1
         Me.lbl_y.TabIndex = 8
         Me.lbl_y.Text = "Label2"
         '
-        'btn_affichage
-        '
-        Me.btn_affichage.Location = New System.Drawing.Point(43, 222)
-        Me.btn_affichage.Name = "btn_affichage"
-        Me.btn_affichage.Size = New System.Drawing.Size(101, 66)
-        Me.btn_affichage.TabIndex = 9
-        Me.btn_affichage.Text = "Button1"
-        Me.btn_affichage.UseVisualStyleBackColor = True
-        '
         'lbl_erreur
         '
         Me.lbl_erreur.AutoSize = True
@@ -133,7 +123,6 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(687, 462)
         Me.Controls.Add(Me.lbl_erreur)
-        Me.Controls.Add(Me.btn_affichage)
         Me.Controls.Add(Me.lbl_y)
         Me.Controls.Add(Me.lbl_x)
         Me.Controls.Add(Me.lbl_tableau)
@@ -159,7 +148,6 @@ Partial Class Form1
     Friend WithEvents lbl_tableau As Label
     Friend WithEvents lbl_x As Label
     Friend WithEvents lbl_y As Label
-    Friend WithEvents btn_affichage As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents lbl_erreur As Label
 End Class

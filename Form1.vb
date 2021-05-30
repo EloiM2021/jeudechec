@@ -180,10 +180,6 @@
         End If
         Return 0
     End Function
-    Private Sub btn_affichage_Click(sender As Object, e As EventArgs) Handles btn_affichage.Click
-        btn_affichage.Text = (PieceSelect)
-
-    End Sub
     Private Sub edt_attaquantX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles edt_attaquantX.KeyPress
         KeyBlocker(e)
     End Sub
